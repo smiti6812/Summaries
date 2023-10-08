@@ -2,7 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 as build-env
 WORKDIR /Summaries
-RUN apt-get install -y nodejs
+<Exec WorkingDirectory="$(SpaRoot)" Command="npm install" /> 
 COPY Summaries/*.csproj .
 RUN dotnet restore
 COPY Summaries .
